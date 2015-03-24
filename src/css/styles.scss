@@ -1,0 +1,45 @@
+@import '../../bower_components/bootstrap/dist/css/bootstrap.min.css';
+@import 'mixins';
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+}
+
+p {
+  font-size: 0.8em;
+  line-height: 1.02em;
+  padding: 12px 0;
+}
+
+a {
+  color: inherit !important;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    color: #00d6b2;
+  }
+}
+
+.mainContainer {
+
+  .mainContent {
+    z-index: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .background {
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    position: absolute;
+    background-color: black;
+    &.default {
+      background: url("../img/backgrounds/default.jpg") no-repeat center center;
+      background-size: cover;
+    }
+  }
+}

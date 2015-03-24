@@ -1,0 +1,9 @@
+@mixin tTransition ()
+{
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+a {
+  @include tTransition;
+}
