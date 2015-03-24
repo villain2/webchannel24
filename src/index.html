@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" ng-app="WC24">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Webchannel24.com</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+    
+    <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><div class="logo"></div></a>
+            </div>
+        
+           <div class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                  <li><a href="" title="">Your Playlist</a></li>
+                  <li><a href="" title="">Pop</a></li>
+                  <li><a href="" title="">Hip Hop/R&amp;B</a></li>
+                  <li><a href="" title="">Modern Rock</a></li>
+                  <li><a href="" title="">Country</a></li>
+                  <li><a href="" title="">Sign In</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+    
+    <div class="mainContainer" data-ng-controller="CarouselCtrl">
+        
+        <div id="myCarousel" class="carousel slide" data-interval="10000" data-pause="click">
+            <!-- Carousel indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>   
+            <!-- Carousel items -->
+            <div class="carousel-inner" data-ng-controller="CarouselCtrl">
+                <div class="item {{banner.state}}" data-ng-repeat="banner in banners | orderBy: 'id'">
+                    <img src="{{banner.imageSrc}}" alt="{{banner.subtitle}}">
+                      <div class="carousel-caption">
+                        <h1>{{banner.title}}</h1>
+                        <p>{{banner.subtitle}}</p>
+                      </div>
+                </div>
+            </div>
+            <!-- Carousel nav -->
+            <a class="carousel-control left" href="#myCarousel" data-slide="prev">‹</a>
+            <a class="carousel-control right" href="#myCarousel" data-slide="next">›</a>
+        </div>
+        
+        <div class="videoListContainer">
+            <h1>Most Recent Videos</h1>
+            <div class="videoList">
+                
+            </div>
+        </div>
+    </div>
+    
+    <!-- JAVASCRIPT -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/Main.js"></script>
+    <!-- END JAVASCRIPT -->
+</body>
+</html>
